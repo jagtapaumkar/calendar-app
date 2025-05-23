@@ -25,36 +25,6 @@ https://calendar-app-git-main-aumkars-projects.vercel.app
 - Boxicons for icons
 - Modern JavaScript (ES6+)
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14.0.0 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/calendar-app.git
-cd calendar-app
-```
-
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-4. Open your browser and visit `http://localhost:5173`
 
 ## Project Structure
 
