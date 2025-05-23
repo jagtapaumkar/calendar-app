@@ -1,0 +1,579 @@
+:root {
+    --primary-bg: #faf8f6;
+    --secondary-bg: #e9e4f0;
+    --accent: #a78bfa; 
+    --highlight: #f59e0b; 
+    --text-light: #1e293b;
+    --text-muted: #64748b;
+    --box-shadow: rgba(167, 139, 250, 0.3);
+    --sidebar-width: 280px;
+  }
+  
+    
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  
+  .app-container {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--primary-bg);
+      overflow: hidden; 
+  }
+  
+  .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--secondary-bg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+  }
+  
+  .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      margin-bottom: 3rem;
+  }
+  
+  .sidebar-logo i {
+      font-size: 2.5rem;
+      color: var(--accent);
+  }
+  
+  .sidebar-logo span {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2rem;
+      color: var(--text-light);
+      letter-spacing: 0.1rem;
+  }
+  
+  .sidebar-menu {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+  
+  .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--text-muted);
+  }
+  
+  .menu-item:hover {
+      background-color: rgba(167, 139, 250, 0.1);
+      color: var(--text-light);
+  }
+  
+  .menu-item.active {
+      background-color: var(--accent);
+      color: var(--text-light);
+  }
+  
+  .menu-item i {
+      font-size: 1.5rem;
+  }
+  
+  .menu-item span {
+      font-size: 1.1rem;
+      font-weight: 500;
+  }
+  
+  .sidebar-user {
+      margin-top: auto;
+      padding: 1.5rem;
+      background-color: rgba(167, 139, 250, 0.1);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  }
+  
+  .user-avatar i {
+      font-size: 2.5rem;
+      color: var(--accent);
+  }
+  
+  .user-info {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .user-name {
+      font-weight: 600;
+      color: var(--text-light);
+  }
+  
+  .user-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+  }
+  
+  .calendar-app {
+      margin-left: var(--sidebar-width); 
+      width: calc(100vw - var(--sidebar-width));
+      height: 100vh;
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      background-color: var(--primary-bg);
+      overflow: hidden; 
+  }
+  
+  .calendar {
+      flex: 0 0 55%; 
+      background-color: var(--primary-bg);
+      padding: 1.5rem; 
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+      height: fit-content;
+      position: sticky; 
+      top: 2rem;
+  }
+  
+  .events {
+      flex: 0 0 45%;    
+      background-color: var(--primary-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+      height: calc(100vh - 4rem); 
+      overflow-y: auto; 
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+  }
+  
+  .heading {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(3rem, 3cqi, 5rem); 
+      color: var(--text-light);
+      letter-spacing: 0.3rem;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+  }
+  
+  .today-btn {
+      background-color: var(--accent);
+      color: var(--text-light);
+      border: none;
+      padding: 0.1rem 1rem;
+      border-radius: 2rem;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.2rem, 1.2cqi, 1.6rem);
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      margin-left: 1.3rem;
+      margin-bottom: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 1rem 0.5rem var(--box-shadow);
+  }
+  
+  .today-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 1.5rem 0.8rem var(--box-shadow);
+  }
+  
+  .today-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 0 1rem 0.5rem var(--box-shadow);
+  }
+  
+  .navigate-date {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem; 
+      margin: 1.5rem 0; 
+  }
+  
+  .navigate-date h2 {
+      font-size: clamp(1.2rem, 1.2cqi, 2rem); 
+      color: var(--text-muted);
+      padding-left: 1rem;
+  }
+  
+  .buttons {
+      display: flex;
+      column-gap: 1rem;
+      margin-left: auto;
+  }
+  
+  .buttons i {
+      width: 3.5rem;
+      height: 3.5rem;
+      background-color: var(--secondary-bg);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: var(--highlight);
+      cursor: pointer;
+  }
+  
+  .weekdays {
+      width: 100%;
+      display: flex;
+      margin: 1.5rem 0; 
+  }
+  
+  .weekdays span {
+      width: calc(100% / 7);
+      font-size: clamp(0.9rem, 0.8vw, 1.1rem); 
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05rem;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .days {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem; 
+  }
+  
+  .days span {
+      font-size: clamp(1rem, 0.9cqi, 1.3rem); 
+      width: calc((100% - 1.2rem) / 7); 
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-light);
+      cursor: pointer;
+      text-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1); 
+  }
+  
+  .current-day {
+      background-color: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 1rem 0.5rem var(--box-shadow); 
+  }
+  
+  .events::-webkit-scrollbar {
+      display: none;
+  }
+  
+  .event-popup {
+      position: absolute;
+        top: 38%;
+      left: 3rem;
+      background-color: var(--secondary-bg);
+      width: clamp(25rem, 21cqi, 40rem);
+      aspect-ratio: 10/9;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 2rem;
+  }
+  
+  .time-input {
+      display: flex;
+      column-gap: 1rem;
+  }
+  
+  .event-popup-time {
+      width: clamp(4rem, 4cqi, 7rem);
+      background-color: var(--accent);
+      color: var(--text-light);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 1.5rem 1rem var(--box-shadow);
+      letter-spacing: .1rem;
+  }
+  
+  .time-input input {
+      background-color: transparent;
+      border: none;
+      border-top: .2rem solid var(--accent);
+      border-bottom: .2rem solid var(--accent);
+      color: var(--text-light);
+      width: clamp(4rem, 4cqi, 7rem);
+      height: 4rem;
+      text-align: center;
+      font-size: clamp(1.2rem, 1.2cqi, 1.6rem);
+  }
+  
+  .time-input input[type="number"]::-webkit-outer-spin-button,
+  .time-input input[type="number"]::-webkit-inner-spin-button {
+      appearance: none;
+  }
+  
+  .event-popup textarea {
+      width: clamp(15rem, 15cqi, 25rem);
+      aspect-ratio: 5/2;
+      resize: none;
+      background-color: var(--primary-bg);
+      border: none;
+      padding: 1rem;
+      border-radius: .5rem;
+      color: var(--text-muted);
+      transition: border 0.5s;
+  }
+  
+  .event-popup textarea:focus {
+      border: .1rem solid var(--accent);
+  }
+  
+  .event-popup textarea::placeholder {
+      font-size: clamp(1rem, .8cqi, 1.2rem);
+      color: var(--text-muted);
+  }
+  
+  .event-popup textarea:focus::placeholder {
+      color: transparent;
+  }
+  
+  .event-popup-btn {
+      width: clamp(15rem, 15cqi, 25rem);
+      height: 4rem;
+      background-color: var(--highlight);
+      color: var(--text-light);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+      letter-spacing: .1rem;
+      border: none;
+      box-shadow: 0 0 1.5rem 1rem rgba(252, 81, 133, 0.2);
+      cursor: pointer;
+  }
+  
+  .event-popup-btn:active {
+      transform: translateY(0.1rem);
+  }
+  
+  .close-event-popup {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+  }
+  
+  .close-event-popup i {
+      font-size: 2.5rem;
+      color: var(--text-light);
+  }
+  
+  .event {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-date-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      color: #666;
+      font-size: 0.9em;
+  }
+  
+  .event-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+      color: #333;
+  }
+  
+  .event-description {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      line-height: 1.4;
+  }
+  
+  .event-time {
+      color: #666;
+      font-size: 0.9em;
+  }
+  
+  .event-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+  }
+  
+  .event-buttons i {
+      cursor: pointer;
+      color: #666;
+      transition: color 0.2s;
+  }
+  
+  .event-buttons i:hover {
+      color: #333;
+  }
+  
+  .event-buttons i.bxs-edit-alt:hover {
+      color: #2196f3;
+  }
+  
+  .event-buttons i.bxs-message-alt-x:hover {
+      color: #f44336;
+  }
+  
+  @media screen and (max-width: 1024px) {
+      .app-container {
+          flex-direction: column;
+          height: auto;
+          min-height: 100vh;
+      }
+  
+      .sidebar {
+          position: relative;
+          width: 100%;
+          height: auto;
+          padding: 1rem;
+          border-right: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+  
+      .sidebar-logo {
+          margin-bottom: 1rem;
+      }
+  
+      .sidebar-menu {
+          flex-direction: row;
+          overflow-x: auto;
+          padding-bottom: 1rem;
+      }
+  
+      .menu-item {
+          white-space: nowrap;
+      }
+  
+      .sidebar-user {
+          display: none;
+      }
+  
+      .calendar-app {
+          margin-left: 0;
+          width: 100%;
+          height: auto;
+          min-height: calc(100vh - 80px);
+          flex-direction: column;
+      }
+  
+      .calendar {
+          flex: none;
+          width: 100%;
+          position: relative;
+          top: 0;
+      }
+  
+      .events {
+          flex: none;
+          width: 100%;
+          height: 60vh; /* Fixed height on mobile */
+      }
+  }
+  
+  @media screen and (max-width: 850px) {
+      .calendar-app {
+          padding: 1rem;
+          gap: 1rem;
+      }
+  
+      .calendar,
+      .events {
+          padding: 1rem;
+      }
+  
+      .events {
+          height: 50vh; /* Slightly smaller height on smaller screens */
+      }
+  
+      .navigate-date {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          margin: 2rem 0;
+      }
+  
+      .buttons {
+          margin-left: 0;
+      }
+  
+      .weekdays,
+      .days {
+          justify-content: center;
+      }
+  
+      .event {
+          flex-direction: column;
+          height: auto;
+          padding: 1rem;
+          gap: 1rem;
+      }
+  
+      .event-date-wrapper {
+          width: 100%;
+          border-right: none;
+          border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+          padding-bottom: 0.5rem;
+          margin-bottom: 0.5rem;
+      }
+  
+      .event-text {
+          width: 100%;
+          text-align: center;
+          padding: 0.5rem 0;
+      }
+  
+      .event-buttons {
+          position: relative;
+          top: auto;
+          right: auto;
+          transform: none;
+          flex-direction: row;
+          justify-content: center;
+          gap: 1rem;
+      }
+  
+      .event-popup {
+          top: 15%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          aspect-ratio: auto;
+          padding: 1.5rem;
+      }
+  
+      .event-popup-btn,
+      .event-popup textarea {
+          width: 100%;
+      }
+  
+      .today-btn {
+          margin: 0 auto 0.5rem;
+          display: block;
+      }
+  }

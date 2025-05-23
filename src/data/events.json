@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Team Meeting",
+      "date": "2024-03-20",
+      "time": "10:00",
+      "duration": 60,
+      "description": "Weekly team sync meeting"
+    },
+    {
+      "id": 2,
+      "title": "Project Deadline",
+      "date": "2024-03-25",
+      "time": "14:00",
+      "duration": 120,
+      "description": "Submit project deliverables"
+    },
+    {
+      "id": 3,
+      "title": "Client Call",
+      "date": "2024-03-22",
+      "time": "11:30",
+      "duration": 45,
+      "description": "Discussion with client about new requirements"
+    },
+    {
+      "id": 4,
+      "title": "Code Review",
+      "date": "2024-03-21",
+      "time": "15:00",
+      "duration": 90,
+      "description": "Review pull requests with team"
+    }
+  ]
+} 
