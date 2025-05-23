@@ -261,7 +261,53 @@
       align-items: center;
       color: var(--text-light);
       cursor: pointer;
-      text-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1); 
+      text-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+      position: relative;
+  }
+  
+  .days span::after {
+      content: "Click to add task";
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--accent);
+      color: var(--text-light);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+  }
+  
+  .days span:hover::after {
+      opacity: 1;
+      visibility: visible;
+      bottom: 130%;
+  }
+  
+  .days span::before {
+      content: "";
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0.5rem;
+      border-style: solid;
+      border-color: var(--accent) transparent transparent transparent;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+  }
+  
+  .days span:hover::before {
+      opacity: 1;
+      visibility: visible;
+      bottom: 120%;
   }
   
   .current-day {
@@ -575,5 +621,18 @@
       .today-btn {
           margin: 0 auto 0.5rem;
           display: block;
+      }
+      
+      .days span::after {
+          font-size: 0.8rem;
+          padding: 0.4rem 0.8rem;
+      }
+      
+      .days span:hover::after {
+          bottom: 140%;
+      }
+      
+      .days span:hover::before {
+          bottom: 130%;
       }
   }
